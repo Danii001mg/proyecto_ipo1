@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="WindowTitle">Iniciar sesión</sys:String>
+    <sys:String x:Key="btLogin">Iniciar sesión</sys:String>
+    <sys:String x:Key="cbItem1">ES</sys:String>
+    <sys:String x:Key="lblContraseña">Contraseña</sys:String>
+    <sys:String x:Key="lblUsuario">Usuario</sys:String>
+    <sys:String x:Key="btnSalir">Salir</sys:String>
+    <sys:String x:Key="btnEditar">Editar</sys:String>
+</ResourceDictionary>

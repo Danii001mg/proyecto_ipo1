@@ -1,0 +1,15 @@
+﻿<Application x:Class="proyecto_ipo1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:proyecto_ipo1"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="recursos/DiccionarioRecursos.en-US.xaml" />
+                <ResourceDictionary Source="recursos/DiccionarioRecursos.es-ES.xaml" />
+                <ResourceDictionary Source="recursos/DiccionarioRecursos.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
