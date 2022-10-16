@@ -55,9 +55,70 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="VentanaUsuario.xaml.cs">
-      <DependentUpon>VentanaUsuario.xaml</DependentUpon>
+    <Compile Include="Actividad.cs" />
+    <Compile Include="Actividades.xaml.cs">
+      <DependentUpon>Actividades.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bungalow.cs" />
+    <Compile Include="ControlActividadesPersonalizado.xaml.cs">
+      <DependentUpon>ControlActividadesPersonalizado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlAlojamientoPersonalizado.xaml.cs">
+      <DependentUpon>ControlAlojamientoPersonalizado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlEmpleadosPersonalizado.xaml.cs">
+      <DependentUpon>ControlEmpleadosPersonalizado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatosReserva.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Empleados.xaml.cs">
+      <DependentUpon>Empleados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Informacion.xaml.cs">
+      <DependentUpon>Informacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="infoUser.xaml.cs">
+      <DependentUpon>infoUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaRuta.xaml.cs">
+      <DependentUpon>NuevaRuta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PagoReserva.xaml.cs">
+      <DependentUpon>PagoReserva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Parcela.cs" />
+    <Compile Include="Reservas.xaml.cs">
+      <DependentUpon>Reservas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs" />
+    <Page Include="Actividades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlActividadesPersonalizado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlAlojamientoPersonalizado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlEmpleadosPersonalizado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Empleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Informacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="infoUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,7 +131,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="VentanaUsuario.xaml">
+    <Page Include="NuevaRuta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagoReserva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reservas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,6 +192,34 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="imagenes\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\mapa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\camping_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\par1.jpg" />
+    <Resource Include="imagenes\par2.jpg" />
+    <Resource Include="imagenes\par3.jpg" />
+    <Resource Include="imagenes\par4.jpg" />
+    <Resource Include="imagenes\par5.jpg" />
+    <Resource Include="imagenes\par6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\bu1.jpg" />
+    <Resource Include="imagenes\bu2.jpg" />
+    <Resource Include="imagenes\bu3.jpg" />
+    <Resource Include="imagenes\bu4.jpg" />
+    <Resource Include="imagenes\bu5.jpg" />
+    <Resource Include="imagenes\bu6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

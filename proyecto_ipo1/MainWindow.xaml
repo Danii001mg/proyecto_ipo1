@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:proyecto_ipo1"
         mc:Ignorable="d"
-        Title="{DynamicResource WindowTitle}" Height="450" Width="800">
+        Title="{DynamicResource WindowTitle}" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,0">
         <Grid.Background>
             <ImageBrush ImageSource="/imagenes/Camping-min.jpg" Opacity="0.5"/>
@@ -35,7 +35,7 @@
         <PasswordBox x:Name="pbxContraseña" PasswordChar="*" VerticalContentAlignment="Center" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="8,8,8,8" IsEnabled="False" />
         <Label x:Name="lblUsuario" Foreground="White" RenderTransformOrigin="0.902,-0.345" Content="{DynamicResource lblUsuario}" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Center" Margin="5,5,10,5" Grid.ColumnSpan="2"/>
         <Label x:Name="lblContraseña" Foreground="White" Content="{DynamicResource lblContraseña}" Grid.Column="2" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,10,5" HorizontalContentAlignment="Left" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cbIdiomas" Grid.Column="7" HorizontalAlignment="Stretch" Margin="15,0,15,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Opacity="0.6" SelectedIndex="0"
+        <ComboBox x:Name="cbIdiomas" Grid.Column="5" Margin="127,0,15,0" VerticalAlignment="Center" Opacity="0.6" SelectedIndex="0"
             SelectionChanged="cb_elementoSeleccionado" Background="Black" >
             <ComboBoxItem x:Name="cbItem1" Content="{DynamicResource cbItem1}"/>
             <ComboBoxItem x:Name="cbItem2" Content="EN"/>

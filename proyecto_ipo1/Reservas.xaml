@@ -1,0 +1,187 @@
+﻿<Window x:Class="proyecto_ipo1.Reservas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:proyecto_ipo1"
+        mc:Ignorable="d"
+        Title="Reservas" Height="685" Width="1207" MinHeight ="630" MinWidth ="1125" WindowStartupLocation="CenterScreen">
+    <Grid Background="#2A0A1B" Margin="0,0,0,-6">
+
+
+        <Grid Background="#2A0A1B" Margin="0,0,10,10" MinWidth="500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="158*"/>
+                <RowDefinition Height="141*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="250"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Rectangle Fill="#3A2F0B" StrokeThickness="0" Stroke="White" HorizontalAlignment="Center" Width="250" Grid.RowSpan="2" Margin="0,63,0,12"/>
+
+
+
+            <Rectangle Fill="#3A2F0B" StrokeThickness="0" Grid.ColumnSpan="2" Height="63" VerticalAlignment="Top">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+
+
+
+            <Image x:Name="imgUsuario" Height="190" Margin="0,17,0,0" Grid.Row="1" Width="190" Source="Imagenes/usuario.png" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill"/>
+            <Image x:Name="imgIcon" Height="220" Margin="0,10,0,0" Grid.Row="2" Width="220" Source="imagenes/camping_icon.png" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill"/>
+
+            <Button x:Name="btnCerrarSesion" HorizontalAlignment="Left" Margin="88,251,0,0" Grid.Row="1" Width="84" Foreground="White" HorizontalContentAlignment="Left" MaxWidth="120" MaxHeight="40" Click="btnCerrarSesion_Click" VerticalAlignment="Top" Height="30">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+                <TextBlock x:Name="btnCerrarSesion1" TextDecorations="Underline" Text="{DynamicResource btnCerrarSesion1}"/>
+            </Button>
+
+            <Label x:Name="lblUsername" Content="Username" HorizontalAlignment="Left" Margin="30,219,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Foreground="White" FontSize="20" Width="149" RenderTransformOrigin="0.403,1.741" VerticalContentAlignment="Center" Padding="0"/>
+
+            <ScrollViewer Grid.RowSpan="3" Margin="0,63,1,15" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Grid x:Name="Grid_TodasFunciones" Width="955" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <WrapPanel x:Name="spReservas" Margin="10,10,230,-5" Orientation="Vertical">
+                        <WrapPanel.Background>
+                            <SolidColorBrush Color="White" Opacity="0.3"/>
+                        </WrapPanel.Background>
+                    </WrapPanel>
+
+
+
+
+
+                    <Border Background="#3A2F0B" BorderBrush="{x:Null}" Margin="730,0,0,0" Height="597" VerticalAlignment="Top" HorizontalAlignment="Left" Width="218">
+                        <Grid x:Name="MenuBusquedaReservas" Height="470" Margin="-200,0,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="71*"/>
+                            </Grid.RowDefinitions>
+                            <Grid x:Name="FechaEntrada">
+                                <Calendar x:Name="calenFechaEntrada" Margin="10,39,220,3"/>
+                                <Label x:Name="lblFechaEntradaInfo" Content="{DynamicResource lblFechaEntradaInfo}" HorizontalAlignment="Left" Margin="50,18,0,409" Foreground="Black" FontWeight="Bold" FontSize="13"/>
+                                <Button x:Name="btnAceptarFechaEntrada" Content="{DynamicResource btnAceptar}" HorizontalAlignment="Left" Margin="208,75,0,0" VerticalAlignment="Top" Width="86" Height="25" Click="btnAceptarFechaEntrada_Click"/>
+                                <Button x:Name="btnCancelarFechaEntrada" Content="{DynamicResource btnCancelar}" HorizontalAlignment="Left" Margin="322,75,0,0" VerticalAlignment="Top" Width="86" Height="25" Click="btnCancelarFechaEntrada_Click"/>
+                            </Grid>
+                            <Grid x:Name="FechaSalida" Margin="0,0,0,165" Visibility="Hidden">
+                                <Calendar x:Name="calenFechaSalida"  HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="14,140,0,0" Height="171" Grid.RowSpan="2" Visibility="Visible"/>
+                                <Label x:Name="lblFechaSalidaInfo" Content="{DynamicResource lblFechaSalidaInfo}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="53,0,0,142" Foreground="Black" FontSize="13" FontWeight="Bold" Visibility="Visible" Height="45"/>
+                                <Button x:Name="btnAceptarFechaSalida" Content="{DynamicResource btnAceptar}" HorizontalAlignment="Left" Margin="209,174,0,0" VerticalAlignment="Top" Width="86" Height="25" Click="btnAceptarFechaSalida_Click"/>
+                                <Button x:Name="btnCalcelarFechaSalida" Content="{DynamicResource btnCancelar}" HorizontalAlignment="Left" Margin="323,175,0,0" VerticalAlignment="Top" Width="86" Height="25" Click="btnCalcelarFechaSalida_Click"/>
+                            </Grid>
+
+                            <Grid x:Name="Huespedes" Visibility="Hidden" Margin="57,211,0,146">
+                                <Grid Margin="10,0,216,20">
+                                    <Rectangle HorizontalAlignment="Left" Height="73" Margin="0,3,0,0" VerticalAlignment="Top" Width="126" RadiusX="5" RadiusY="5" Fill="#FF2A0A1B"/>
+                                    <Grid  Width="60" Height="26" Margin="62,41,0,0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="15*"/>
+                                            <RowDefinition Height="8*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBox x:Name="txtNinios" x:FieldModifier="private" Text="0" Margin="8,2,0,3" Width="25" HorizontalAlignment="Left" Grid.RowSpan="2" IsEnabled="False"/>
+                                        <Button x:Name="cmdUp2" x:FieldModifier="private" FontSize="10" Padding="0,-4,0,0" Content="▲" Width="10" Margin="36,2,4,4.75" Click="cmdUp2_Click" />
+                                        <Button x:Name="cmdDown2" x:FieldModifier="private" FontSize="10" Padding="0,-4,0,0" Content="▼" Width="10" Margin="36,12,4,3" Grid.RowSpan="2" Click="cmdDown2_Click" />
+                                    </Grid>
+                                    <Grid  Width="58" Height="26" Margin="62,10,0,0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="15*"/>
+                                            <RowDefinition Height="8*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBox x:Name="txtAdultos" x:FieldModifier="private" Text="0" Margin="8,2,0,3" Width="25" HorizontalAlignment="Left" Grid.RowSpan="2" IsEnabled="False"/>
+                                        <Button x:Name="cmdUp4" x:FieldModifier="private" FontSize="10" Padding="0,-4,0,0" Content="▲" Width="10" Margin="36,2,4,4.75" Click="cmdUp4_Click" />
+                                        <Button x:Name="cmdDown4" x:FieldModifier="private" FontSize="10" Padding="0,-4,0,0" Content="▼" Width="10" Margin="40,12,8,0" Grid.RowSpan="2" Height="11" VerticalAlignment="Top" Click="cmdDown4_Click" />
+                                    </Grid>
+                                    <Label x:Name="lblNiños" Content="{DynamicResource lblNiños}" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                    <Label x:Name="lblAdultos" Content="{DynamicResource lblAdultos}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                </Grid>
+                                <Button x:Name="btnAceptarHuespedes" Content="{DynamicResource btnAceptar}" HorizontalAlignment="Left" Margin="150,60,0,0" VerticalAlignment="Top"  Width="86" Height="25" Click="btnAceptarHuespedes_Click" RenderTransformOrigin="2.28,-0.837"/>
+                                <Button x:Name="btnCancelarHuespedes" Content="{DynamicResource btnCancelar}" HorizontalAlignment="Left" Margin="265,60,0,0" VerticalAlignment="Top"  Width="86" Height="25" Click="btnCancelarHuespedes_Click"/>
+                            </Grid>
+
+                            <Grid x:Name="TipoAlojamiento" HorizontalAlignment="Right" Height="63" VerticalAlignment="Top" Width="219" Visibility="Visible" Margin="0,339,0,0">
+
+                                <Button x:Name="btnParcelas" Content="{DynamicResource btnParcelas}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="85" Height="25" Click="btnParcelas_Click" IsEnabled="False"/>
+                                <Button x:Name="btnBungalows" Content="{DynamicResource btnBungalows}" HorizontalAlignment="Left" Margin="124,0,0,0" VerticalAlignment="Center" Width="85" Height="25" Click="btnBungalows_Click"/>
+
+                            </Grid>
+
+                            <Label x:Name="lblFechaEntrada" Content="-" Height="34" Margin="0,40,0,139" Padding="10,5,5,5" VerticalAlignment="Top" Foreground="White" FontSize="15" HorizontalAlignment="Right" Width="219" HorizontalContentAlignment="Center"/>
+                            <Label x:Name="lblFechaSalida" Content="-" Height="34" Margin="0,138,0,39" Padding="10,5,5,5" Foreground="White" FontSize="15" HorizontalAlignment="Right" Width="219" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
+                            <Label x:Name="lblHuespedes" Content="0" Height="34" Margin="0,236,0,205" Padding="10,5,5,5" VerticalAlignment="Top" Foreground="White" FontSize="15" HorizontalAlignment="Right" Width="219" Grid.Row="1" HorizontalContentAlignment="Center"/>
+
+                            <Button x:Name="btnFechaEntrada" Content="{DynamicResource btnFechaEntrada}" Padding="0,0,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Foreground="White" Click="btnFechaEntrada_Click" FontSize="15" HorizontalAlignment="Right" Width="53" Margin="0,15,83,179" VerticalAlignment="Top"/>
+                            <Button x:Name="btnFechaSalida" Content="{DynamicResource btnFechaSalida}" Margin="0,113,90,78" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Padding="0,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Height="20" VerticalAlignment="Top" Foreground="White" Click="btnFechaSalida_Click" FontSize="15" HorizontalAlignment="Right" Width="39"/>
+                            <Button x:Name="btnHuespedes" Content="{DynamicResource btnHuespedes}" Margin="0,211,82,16" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="0,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Foreground="White" Click="btnHuespedes_Click" FontSize="15" HorizontalAlignment="Right" Width="55" RenderTransformOrigin="1.284,1.312" VerticalAlignment="Top"/>
+                            <Button x:Name="btntipoAlojamiento" Content="{DynamicResource btntipoAlojamiento}" Margin="0,309,41,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="0,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Height="25" VerticalAlignment="Top" Foreground="White" Click="btntipoAlojamiento_Click" FontSize="15" HorizontalAlignment="Right" Width="137" FontStyle="Normal"/>
+
+                            <Button x:Name="btnBuscar" Content="{DynamicResource btnBuscar}" Margin="0,0,21,-32" Background="#FF2A0A1B" BorderThickness="1,1,1,1" Height="52" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="177" Foreground="White" Click="Button_Click" FontSize="25" Grid.Row="1">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+            <Grid HorizontalAlignment="Left" Height="263" Margin="10,-4,0,0" VerticalAlignment="Top" Width="942" MinWidth="250" MinHeight="100" RenderTransformOrigin="0.506,0.132" Grid.RowSpan="2" Grid.Column="1">
+                <Button x:Name="btnReservas" Content="{DynamicResource btnReservas}" Margin="238,3,584,197" Foreground="White" HorizontalContentAlignment="Center" FontSize="18" MaxWidth="120" MaxHeight="40">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="Green" Opacity="0.75"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnActividades" Content="{DynamicResource btnActividades}" HorizontalAlignment="Left" Margin="411,3,0,197" Width="120" Foreground="White" HorizontalContentAlignment="Center" FontSize="18" MaxWidth="120" MaxHeight="40" Click="btnActividades_Click">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="Green" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnEmpleados" Content="{DynamicResource btnEmpleados}" Margin="590,3,232,197" Foreground="White" HorizontalContentAlignment="Center" FontSize="18" MaxWidth="120" MaxHeight="40" Click="btnEmpleados_Click">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="Green" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnInfo" Content="{DynamicResource btnInfo}" Margin="781,3,41,197" Foreground="White" HorizontalContentAlignment="Center" FontSize="18" RenderTransformOrigin="0.488,1" MaxWidth="120" MaxHeight="40" Click="btnInfo_Click">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="Green" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPrincipal" Content="{DynamicResource btnPrincipal}" Margin="39,4,783,198" Foreground="White" HorizontalContentAlignment="Center" FontSize="18" MaxWidth="120" MaxHeight="40" MinWidth="120" MinHeight="38" Click="btnPrincipal_Click">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="Green" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="Green" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <ComboBox x:Name="cbIdiomas" SelectedIndex="0"
+            SelectionChanged="cb_elementoSeleccionado"
+            Background="Black" Margin="0,2,0,50" HorizontalAlignment="Left" Width="105" FontSize="15" >
+                <ComboBoxItem x:Name="cbItem1" Content="ES"/>
+                <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+            </ComboBox>
+        </Grid>
+    </Grid>
+</Window>

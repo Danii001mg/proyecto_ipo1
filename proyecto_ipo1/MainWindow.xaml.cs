@@ -31,7 +31,6 @@ namespace proyecto_ipo1
         private void comprobarUsuario(object sender, RoutedEventArgs e)
         {
             string usuario = "admin";
-            VentanaUsuario ventanaNueva = new VentanaUsuario();
             if (!String.IsNullOrEmpty(tbxEmail.Text) && tbxEmail.Text.Equals(usuario, StringComparison.InvariantCultureIgnoreCase))
             {
                 // comprobación correcta
@@ -40,8 +39,10 @@ namespace proyecto_ipo1
                 comprobarContraseña(pbxContraseña.Password);
                 if (contador++ == 2)
                 {
-                    Close();
-                    ventanaNueva.Show();
+                    ComboBoxItem cbi = (ComboBoxItem)cbIdiomas.SelectedItem;
+                    infoUser ventana = new infoUser(cbi.Content.ToString());
+                    this.Close();
+                    ventana.Show();
                 }
 
             }

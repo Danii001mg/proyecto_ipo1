@@ -1,0 +1,79 @@
+﻿<Window x:Class="proyecto_ipo1.NuevaRuta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:proyecto_ipo1"
+        mc:Ignorable="d"
+        Title="NuevaRuta" Height="426" Width="794" MinWidth="794" MinHeight="426" ResizeMode="NoResize" Background="Gray" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="152*" />
+            <RowDefinition Height="159*" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="Crear" Height="416" VerticalAlignment="Top" HorizontalAlignment="Left" Width="789" Margin="1,1,1,1" Grid.RowSpan="2">
+            <Rectangle Fill="#2A0A1B" StrokeThickness="0" Margin="0,0,-4,0" RadiusX="10" RadiusY="10" Height="409" VerticalAlignment="Top">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Label x:Name="lblDuracion" Content="{DynamicResource lblDuracion}" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Height="21" Width="101" VerticalContentAlignment="Center" Foreground="White" Padding="0"/>
+            <TextBox x:Name="txtDuracion" HorizontalAlignment="Left" Height="20" Margin="10,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" VerticalContentAlignment="Center"/>
+            <Label x:Name="lblNombreRuta" Content="{DynamicResource lblNombreRuta}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="149" Height="17" Foreground="White" Padding="0"/>
+            <TextBox x:Name="txtNombreRuta" HorizontalAlignment="Left" Height="20" Margin="10,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+            <Label x:Name="lblInfoFecha" Content="Fecha no válida&#xA;(No anterior a hoy)" HorizontalAlignment="Left" Margin="215,211,0,0" VerticalAlignment="Top" FontSize="15" Width="133" Foreground="#FFFF3232" Height="42" Padding="3,0,0,0" Visibility="Hidden" />
+            <Button x:Name="btnCrearActividad" Content="{DynamicResource btnCrearActividad}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="128" Margin="20,232,0,0" Height="52" Background="#FF7CC731" Foreground="White" BorderBrush="#FF707070" BorderThickness="0" FontSize="20" Click="btnCrearActividad_Click"/>
+            <Label x:Name="lblPuntoEncuentro" Content="{DynamicResource lblPuntoEncuentro}" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Height="21" Width="127" VerticalContentAlignment="Center" Foreground="White" Padding="0,5,0,0"/>
+            <TextBox x:Name="txtEncuentro" HorizontalAlignment="Left" Height="20" Margin="10,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" VerticalContentAlignment="Center"/>
+            <Label x:Name="lblDificultad" Content="{DynamicResource lblDificultad}" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Height="19" Width="101" VerticalContentAlignment="Center" Foreground="White" Padding="0"/>
+            <TextBox x:Name="txtDificultad" HorizontalAlignment="Left" Height="20" Margin="10,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" VerticalContentAlignment="Center"/>
+            <Grid x:Name="DibujarRuta" Margin="254,10,10,24">
+                <InkCanvas Margin="0,0,0,2" x:Name="inkCanvas1" Gesture="inkCanvas1_Gesture" >
+                    <InkCanvas.Background>
+                        <ImageBrush ImageSource="imagenes/mapa.jpg"/>
+                    </InkCanvas.Background>
+                </InkCanvas>
+
+                <Button Content="{DynamicResource btnLimpiar}" Height="24" HorizontalAlignment="Left" Margin="-80,345,0,0" x:Name="btnLimpiar"
+                    VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+                <Button x:Name="btnRojo" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="-25,220,0,0" Height="20" Background="Red" Click="btnRojo_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Button x:Name="btnVerde" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="-25,245,0,0" Height="20" Background="#FF3AFF00" Click="btnVerde_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnAzul" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="-25,270,0,0" Height="20" Background="#FF00F3FF" Click="btnAzul_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnNegro" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="-25,295,0,0" Height="20" Background="Black" Click="btnNegro_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnBlanco" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="-25,320,0,0" Height="20" Background="White" Click="btnBlanco_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>

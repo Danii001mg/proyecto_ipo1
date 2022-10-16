@@ -1,0 +1,71 @@
+﻿<Window x:Class="proyecto_ipo1.PagoReserva"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:proyecto_ipo1"
+        mc:Ignorable="d"
+        Title="PagoReserva" Height="325" Width="662" ResizeMode="CanResize" MinWidth="662" MinHeight="308" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF1D1F1D" MinWidth="500" HorizontalAlignment="Center" VerticalAlignment="Top" Height="325">
+        <ScrollViewer Margin="0,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid Background="#FF1D1F1D" MinWidth="661" Height="325" Width="662" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="798"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="DatosReserva" Grid.ColumnSpan="2" Margin="0,0,0,0" Width="662" Background="#2A0A1B" HorizontalAlignment="Left" VerticalAlignment="Top" Height="325">
+                    <Rectangle HorizontalAlignment="Left" Height="82" Margin="10,21,0,0" Stroke="White" StrokeThickness="2" VerticalAlignment="Top" Width="82" RadiusX="50" RadiusY="50"/>
+                    <Label Content="1" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Height="82" Width="82" FontSize="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+                    <Label x:Name="lblDescripcion" Foreground="White" Content="Tipo alojamiento + tamaño&#xA;Fecha inicio-fin&#xA;Huéspedes" HorizontalAlignment="Left" Margin="111,10,0,0" VerticalAlignment="Top" Width="565" Height="93" FontSize="16"/>
+                    <Label x:Name="lblPrecio" Foreground="White" Content="Desglose del precio" HorizontalAlignment="Left" Margin="466,123,0,0" VerticalAlignment="Top" Width="186" Height="79" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+                    <TextBox x:Name="txtNombreApellidos" HorizontalAlignment="Left" Height="23" Margin="111,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+                    <Label x:Name="lblNombreApellidos" Foreground="White" Content="{DynamicResource lblNombreCompleto}" HorizontalAlignment="Left" Margin="111,103,0,0" VerticalAlignment="Top" Width="141"/>
+                    <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" Margin="111,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="lblTelefono" Foreground="White" Content="{DynamicResource lblTelefono}" HorizontalAlignment="Left" Margin="114,188,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.328,0.814"/>
+                    <TextBox x:Name="txtHoraEntrada" HorizontalAlignment="Left" Height="24" Margin="303,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblHoraEntrada" Foreground="White" Content="{DynamicResource lblHoraEntrada}" HorizontalAlignment="Left" Margin="303,108,0,0" VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="txtHoraSalida" HorizontalAlignment="Left" Height="23" Margin="303,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblHoraSalida" Foreground="White" Content="{DynamicResource lblHoraSalida}" HorizontalAlignment="Left" Margin="303,188,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Button x:Name="btnDatosReservaCancelar" Content="{DynamicResource btnCancelar}" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top" Width="116" Height="30" Click="DatosReservaCancelar"/>
+                    <Button x:Name="btnDatosReservaContinuar" Content="{DynamicResource btnContinuar}" HorizontalAlignment="Left" Margin="509,252,0,0" VerticalAlignment="Top" Width="116" Height="30" Click="btnDatosReservaContinuar_Click"/>
+                    <Label x:Name="lblErrorNombreApellidos" Content="{DynamicResource lblErrorNombre}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="428,123,0,0" Width="218" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="lblErrorTelefono" Content="{DynamicResource lblErrorTelefono}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="428,177,0,0" Width="303" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="lblErrorHoraEntrada" Content="{DynamicResource lblErrorHora}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="458,231,0,0" Width="218" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="lblErrorHoraSalida" Content="{DynamicResource lblErrorHora}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="458,283,0,0" Width="218" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                </Grid>
+                <Grid x:Name="Información_de_pago" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,0,0,0" Width="662" Background="#2A0A1B" Visibility="Hidden" VerticalAlignment="Top" Height="325">
+                    <Rectangle HorizontalAlignment="Left" Height="82" Margin="10,10,0,0" Stroke="White" StrokeThickness="2" VerticalAlignment="Top" Width="82" RadiusX="50" RadiusY="50"/>
+                    <Label Content="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="82" Width="82" FontSize="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+                    <TextBox x:Name="txtTitular" HorizontalAlignment="Left" Height="23" Margin="214,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+                    <Label x:Name="lblTitular" Foreground="White" Content="{DynamicResource lblTitular}" HorizontalAlignment="Left" Margin="208,9,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtTarjeta" HorizontalAlignment="Left" Height="23" Margin="214,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181"/>
+                    <Label x:Name="lblNumeroTarjeta" Foreground="White" Content="{DynamicResource lblNumeroTarjeta}" HorizontalAlignment="Left" Margin="214,63,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtMes" HorizontalAlignment="Left" Height="24" Margin="214,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="48" AutomationProperties.HelpText="mm"/>
+                    <Label x:Name="lblCaducidad" Foreground="White" Content="{DynamicResource lblCaducidad}" HorizontalAlignment="Left" Margin="214,117,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtSeguridad" HorizontalAlignment="Left" Height="23" Margin="214,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblSeguridad" Foreground="White" Content="{DynamicResource lblSeguridad}" HorizontalAlignment="Left" Margin="214,171,0,0" VerticalAlignment="Top" Width="125"/>
+                    <TextBox x:Name="txtAnio" HorizontalAlignment="Left" Height="23" Margin="274,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="47" AutomationProperties.HelpText="aa"/>
+                    <Button x:Name="btnInfoPagoContinuar" Content="{DynamicResource btnContinuar}" HorizontalAlignment="Left" Margin="509,252,0,0" VerticalAlignment="Top" Width="116" Height="30" Click="InfoPagoContinuar"/>
+                    <Button x:Name="btnInfoPagoAtras" Content="{DynamicResource btnAtras}" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top" Width="116" Height="30" Click="InfoPagoAtras"/>
+                    <Label x:Name="lblErrorTitular" Content="{DynamicResource lblErrorTitular}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="490,35,0,0" Width="303" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="lblErrorTarjeta" Content="{DynamicResource lblErrorTarjeta}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="490,89,0,0" Width="303" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="lblErrorCaducidad" Content="{DynamicResource lblErrorCaducidad}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="409,143,0,0" Width="449" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="lblErrorSeguridad" Content="{DynamicResource lblErrorSeguridad}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="459,197,0,0" Width="303" Height="23" Padding="0" Foreground="Red" Visibility="Hidden"/>
+                </Grid>
+                <Grid x:Name="Confirmación" Grid.ColumnSpan="2" Margin="0,0,0,0" Width="662" Background="#2A0A1B" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Height="325">
+                    <Rectangle HorizontalAlignment="Left" Height="82" Margin="10,10,0,0" Stroke="White" StrokeThickness="2" VerticalAlignment="Top" Width="82" RadiusX="50" RadiusY="50"/>
+                    <Label Content="3" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="82" Width="82" FontSize="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+                    <Label x:Name="lblConfirmacion" Foreground="White" Content="Tipo alojamiento + tamaño&#xA;Fecha inicio + hora estimada&#xA;Fecha fin + hora estimada&#xA;Huéspedes&#xA;Nombre responsable reserva&#xA;Precio final" HorizontalAlignment="Left" Margin="97,1,0,0" VerticalAlignment="Top" Width="655" Height="265" FontSize="20" VerticalContentAlignment="Center"/>
+                    <Button x:Name="btnConfirmacionFinalizar" Content="{DynamicResource btnFinalizar}" HorizontalAlignment="Left" Margin="509,252,0,0" VerticalAlignment="Top" Width="116" Height="30" Click="ConfirmacionFinalizar"/>
+                    <Button x:Name="btnConfirmacionAtras" Content="{DynamicResource btnAtras}" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top" Width="116" Height="30" Click="ConfirmacionAtras"/>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+
+
+</Window>

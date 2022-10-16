@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="proyecto_ipo1.ControlAlojamientoPersonalizado"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:proyecto_ipo1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" Height="160" MinWidth="700" Width="661.333">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="58*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="212"/>
+            <ColumnDefinition Width="227"/>
+            <ColumnDefinition Width="101"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="Descripcion" Grid.ColumnSpan="4" Grid.RowSpan="2">
+            <Border
+                BorderBrush="White"
+                Background="#FFF5A9E1"
+                Opacity="0.6"
+                BorderThickness="4"
+                CornerRadius="6" />
+            <Label x:Name="lblNombreAlojamiento" Content="Nombre alojamiento" HorizontalAlignment="Left" Margin="441,100,0,0" VerticalAlignment="Top" Height="26" Width="158" Foreground="White" FontSize="16" Padding="0"/>
+            <Label x:Name="lblDescipcion" Content="Tamaño&#xA;Ubicación&#xA;..." HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="274" Width="249" Foreground="White" Padding="5,0"/>
+
+        </Grid>
+
+        <Button x:Name="btnReservarInfo" Content="{DynamicResource btnReservarInfo}" BorderBrush="{x:Null}" BorderThickness="0" Foreground="White" Background="#3A2F0B" Click="reservar_click" FontSize="16" Margin="0,63,10,0" Grid.Column="3" VerticalAlignment="Top" Height="46" HorizontalContentAlignment="Center" Grid.Row="1">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image x:Name="imagen1" Margin="6,6,186,6" Source="Imagenes/camping-_icon.png" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Left"/>
+        <Image x:Name="imagen2" Margin="179,6,10,6" Source="Imagenes/camping-_icon.png" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>
